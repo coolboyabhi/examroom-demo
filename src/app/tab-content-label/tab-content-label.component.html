@@ -1,0 +1,12 @@
+<div class="w-full flex justify-between p-2">
+    @for (item of items; track $index) {
+        <div class="flex flex-row space-x-1 text-sm {{item.color}}">
+            <span class="material-symbols-outlined">
+                {{item.icon}}
+            </span>
+            <span class="md:block sm:hidden hidden">
+                {{item.content}}
+            </span>
+        </div>
+    }
+</div>

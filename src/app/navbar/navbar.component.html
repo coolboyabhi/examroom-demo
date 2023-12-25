@@ -1,0 +1,91 @@
+<nav class="flex md:flex-row sm:flex-col flex-col justify-between items-center m-4">
+    <div>
+      <img
+        src="assets/icons/logo.png"
+        class="w-48 select-none flex-none"
+        alt="ExamRoom.AI"
+      />
+    </div>
+    <div class="mx-2 xl:block lg:hidden hidden">
+      <ul class="flex space-x-2 justify-between">
+        <li class="flex space-x-1 justify-center items-center">
+          <a href="#">Products </a>
+          <mat-icon
+            class="material-symbols-outlined"
+            fontIcon="keyboard_arrow_down"
+          ></mat-icon>
+        </li>
+        <li class="flex space-x-1 justify-center items-center">
+          <a href="#">Features & Solutions </a>
+          <mat-icon
+            class="material-symbols-outlined"
+            fontIcon="keyboard_arrow_down"
+          ></mat-icon>
+        </li>
+        <li class="flex space-x-1 justify-center items-center">
+          <a href="#">Industries </a>
+          <mat-icon
+            class="material-symbols-outlined"
+            fontIcon="keyboard_arrow_down"
+          ></mat-icon>
+        </li>
+        <li class="flex space-x-1 justify-center items-center">
+          <a href="#">Resources </a>
+          <mat-icon
+            class="material-symbols-outlined"
+            fontIcon="keyboard_arrow_down"
+          ></mat-icon>
+        </li>
+        <li class="flex space-x-1 justify-center items-center">
+          <a href="#">Why ExamRoom.AI </a>
+          <mat-icon
+            class="material-symbols-outlined"
+            fontIcon="keyboard_arrow_down"
+          ></mat-icon>
+        </li>
+        <li class="flex space-x-1 justify-center items-center">
+          <a href="#">Pricing</a>
+          <mat-icon
+            class="material-symbols-outlined"
+            fontIcon="keyboard_arrow_down"
+          ></mat-icon>
+        </li>
+      </ul>
+    </div>
+    <div class="md:w-96 sm:w-full w-96 nav__search justify-end flex md:flex-row sm:flex-col flex-col list-none ml-auto gap-4" style="font-size: 18px">
+      <!-- <div class="border h-10 w-48 relative">
+        <input placeholder="Search" type="text" />
+        <mat-icon
+          class="material-symbols-outlined search-icon cursor-pointer select-none"
+          fontIcon="search"
+        ></mat-icon>
+      </div> -->
+
+      <mat-form-field class="h-10 md:w-48 sm:w-full w-full" appearance="outline">
+        <input matInput placeholder="Search">
+        <mat-icon
+            matSuffix
+          class="material-symbols-outlined search-icon cursor-pointer select-none"
+          fontIcon="search"
+        ></mat-icon>
+      </mat-form-field>
+  
+      <div class="flex gap-4">
+        <button
+          routerLink="/login"
+          class="border rounded border-emerald-500 text-emerald-500 h-10 w-24"
+          style="height: 3.5rem;"
+        >
+          Login
+        </button>
+  
+        <button
+          routerLink="/sign-up"
+          class="bg-emerald-500 rounded text-white h-10 w-24"
+          style="height: 3.5rem;"
+        >
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </nav>

@@ -1,0 +1,75 @@
+<div class="flex flex-col space-y-4 w-full">
+    <div class="flex w-full space-x-4">
+        <mat-form-field color="primary" appearance="fill">
+            <mat-label>From</mat-label>
+            <input matInput [matDatepicker]="picker1">
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+          
+        <mat-form-field color="primary" appearance="fill">
+            <mat-label>To</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="w-full flex md:flex-row sm:flex-col flex-col justify-between p-2 bg-gray-100 rounded-full">
+        <button
+            mat-flat-button
+            style="border-radius: 18px;"
+            [style.background]="currentTab === 'ALL' ? 'teal' : 'rgb(243 244 246)'"
+            [style.color]="currentTab === 'ALL' ? 'white' : ''"
+            [innerHTML]="'ALL'"
+            (click)="currentTab = 'ALL'">
+        </button>
+        <button
+            mat-flat-button
+            style="border-radius: 18px;"
+            [style.background]="currentTab === 'SERVER_DB' ? 'teal' : 'rgb(243 244 246)'"
+            [style.color]="currentTab === 'SERVER_DB' ? 'white' : ''"
+            [innerHTML]="'SERVER_DB'"
+            (click)="currentTab = 'SERVER_DB'">
+            Server and Database
+        </button>
+        <button
+            mat-flat-button
+            style="border-radius: 18px;"
+            [style.background]="currentTab === 'BUSINESS_OPERATIONAL' ? 'teal' : 'rgb(243 244 246)'"
+            [style.color]="currentTab === 'BUSINESS_OPERATIONAL' ? 'white' : ''"
+            [innerHTML]="'BUSINESS_OPERATIONAL'"
+            (click)="currentTab = 'BUSINESS_OPERATIONAL'">
+            Business Operational
+        </button>
+        <button
+            mat-flat-button
+            style="border-radius: 18px;"
+            [style.background]="currentTab === 'SUPPORT_OPERATIONAL' ? 'teal' : 'rgb(243 244 246)'"
+            [style.color]="currentTab === 'SUPPORT_OPERATIONAL' ? 'white' : ''"
+            [innerHTML]="'SUPPORT_OPERATIONAL'"
+            (click)="currentTab = 'SUPPORT_OPERATIONAL'">
+            Support Operational
+        </button>
+    </div>
+
+    <app-tab-content-label></app-tab-content-label>
+
+    <ng-container [ngSwitch]="currentTab">
+        <ng-container *ngSwitchCase="'ALL'">
+            <app-tab-content-all></app-tab-content-all>
+        </ng-container>
+        <ng-container *ngSwitchCase="'SERVER_DB'">
+            <app-tab-content-server-and-db></app-tab-content-server-and-db>
+        </ng-container>
+        <ng-container *ngSwitchCase="'BUSINESS_OPERATIONAL'">
+            <app-tab-content-business-operational></app-tab-content-business-operational>
+        </ng-container>
+        <ng-container *ngSwitchCase="'SUPPORT_OPERATIONAL'">
+            <app-tab-content-support-operational></app-tab-content-support-operational>
+        </ng-container>
+        
+        <ng-container *ngSwitchDefault="">
+            <!-- nothing to display -->
+        </ng-container>
+    </ng-container>
+</div>

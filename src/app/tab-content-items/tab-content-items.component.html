@@ -1,0 +1,27 @@
+<div class="w-full grid grid-cols-4 gap-6">
+    @for (item of contentItems$ | async; track $index) {
+        <div class="w-full h-40 flex flex-col space-y-4 justify-center items-center px-6 border hover:border-teal-500">
+            <div class="flex space-x-2 justify-start items-center">
+                @switch (item.type) {
+                    @case ("ICON") {
+                        <span
+                            class="material-symbols-outlined text-gray-400"
+                            [style.fontSize]="'2rem'">
+                            {{item.icon}}
+                        </span>
+                    }
+                    @case ("DATA") {
+                        <span class="text-gray-400 text-2xl">
+                            {{item.data}}
+                        </span>
+                    }
+                }
+            </div>
+            <div class="flex justify-start items-center">
+                <span class="text-gray-500">
+                    {{item.label}}
+                </span>
+            </div>
+        </div>
+    }
+</div>

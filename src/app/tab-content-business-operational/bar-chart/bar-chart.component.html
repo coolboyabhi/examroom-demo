@@ -1,0 +1,17 @@
+
+
+
+<div class="">
+  <div class="mb-6 font-medium text-lg text-black font">
+    Online and Offline Breakdown by Status
+  </div>
+  <div>
+    <canvas baseChart class="h-12 w-full"
+    [data]="barChartData"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [type]="'bar'">
+</canvas>
+  </div>
+</div>
